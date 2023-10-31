@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added viewport meta tag for responsive design -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,7 +31,7 @@
             display: block;
             color: white;
             text-align: center;
-            padding: 14px 16px;
+            padding: 10px 16px; /* Reduced padding for better mobile view */
             text-decoration: none;
         }
 
@@ -62,8 +63,8 @@
             background-color: black;
             color: white;
             padding: 20px;
-            margin: 20px auto;
-            width: 60%;
+            margin: 20px 10px; /* Added some margin for better mobile spacing */
+            width: 90%; /* Increased width for better mobile view */
         }
 
         .registration-form {
@@ -80,9 +81,9 @@
         .registration-form label {
             color: white;
             display: inline-block;
-            text-align: right;
-            width: 40%;
-            margin-right: 10px;
+            text-align: left;
+            width: 100%;
+            margin-right: 0;
         }
 
         .radio-label {
@@ -94,7 +95,7 @@
         .register-button button {
             background-color: black;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 30px; /* Larger button size for mobile */
             border: none;
             cursor: pointer;
             text-decoration: underline;
@@ -113,7 +114,9 @@
         @media (max-width: 768px) {
             .navbar a {
                 float: none;
-                display: block;
+            }
+
+            .navbar {
                 text-align: center;
             }
 
@@ -132,7 +135,7 @@
     </header>
 
     <div class="navbar" id="navbar">
-        <a href="index.html">Home</a> <!-- Updated the href attribute to open index.html -->
+        <a href="index.html">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
