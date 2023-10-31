@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .navbar a:hover {
+            background-color: #4CAF50;
+            color: black;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .form-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .form-label {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .custom-file-upload {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .selected-file {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pedal<span style="color: white;">Share</span></h1>
+    </header>
+
+    <nav class="navbar" id="navbar">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <div class="form-container">
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <div class="form-label">
+                    <label for="idUpload">Upload your ID:</label>
+                </div>
+                <input type="file" id="idUpload" name="idUpload" accept=".jpg, .jpeg, .png, .pdf" class="file-input">
+                <label for="idUpload" class="custom-file-upload">Select File</label>
+                <span class="selected-file" id="idFileName"></span><br><br>
+
+                <div class="form-label">
+                    <label for="licenseUpload">Upload your Driver's License:</label>
+                </div>
+                <input type="file" id="licenseUpload" name="licenseUpload" accept=".jpg, .jpeg, .png, .pdf" class="file-input">
+                <label for="licenseUpload" class="custom-file-upload">Select File</label>
+                <span class="selected-file" id="licenseFileName"></span><br><br>
+
+                <div class="form-label">
+                    <label for="passportUpload">Upload your Passport:</label>
+                </div>
+                <input type="file" id="passportUpload" name="passportUpload" accept=".jpg, .jpeg, .png, .pdf" class="file-input">
+                <label for="passportUpload" class="custom-file-upload">Select File</label>
+                <span class="selected-file" id="passportFileName"></span><br><br>
+
+                <div class="form-label">
+                    <label for="proofOfResidenceUpload">Upload Proof of Residence:</label>
+                </div>
+                <input type="file" id="proofOfResidenceUpload" name="proofOfResidenceUpload" accept=".jpg, .jpeg, .png, .pdf" class="file-input">
+                <label for="proofOfResidenceUpload" class="custom-file-upload">Select File</label>
+                <span class="selected-file" id="proofOfResidenceFileName"></span><br><br>
+                
+                <!-- New field for Bike Pictures -->
+                <div class="form-label">
+                    <label for="bikePicturesUpload">Upload Bike Pictures:</label>
+                </div>
+                <input type="file" id="bikePicturesUpload" name="bikePicturesUpload" accept=".jpg, .jpeg, .png" class="file-input">
+                <label for="bikePicturesUpload" class="custom-file-upload">Select File</label>
+                <span class="selected-file" id="bikePicturesFileName"></span><br><br>
+                
+                <!-- New field for Location -->
+                <div class="form-label">
+                    <label for="location">Location:</label>
+                </div>
+                <input type="text" id="location" name="location" class="form-input" placeholder="Location"><br><br>
+
+                <input type="submit" value="Upload" class="custom-file-upload">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2023 PedalShare
+    </footer>
+
+    <script>
+        const inputElements = document.querySelectorAll('.file-input');
+        inputElements.forEach((input) => {
+            input.addEventListener('change', (event) => {
+                const fileName = event.target.files[0] ? event.target.files[0].name : 'No file selected';
+                document.getElementById(`${input.id}FileName`).textContent = fileName;
+            });
+        });
+    </script>
+</body>
+</html>
