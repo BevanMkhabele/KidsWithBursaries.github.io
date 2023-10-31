@@ -1,49 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            background: linear-gradient(to bottom, #0074E4, #0042A6);
-            color: white;
             margin: 0;
             padding: 0;
+            background-color: #f0f0f0;
         }
-        h1 {
-            background-color: rgba(0, 0, 0, 0.5);
+
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
             padding: 20px;
         }
-        /* Individual word styles */
-        .green-word {
-            color: green;
+
+        .navbar {
+            display: none;
         }
-        .white-word {
+
+        .navbar a {
+            float: left;
+            display: block;
             color: white;
-        }
-        .red-word {
-            color: red;
-        }
-        a {
+            text-align: center;
+            padding: 14px 16px;
             text-decoration: none;
-            display: inline-block;
-            padding: 20px 40px;
-            background-color: #0042A6;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            color: white; /* Set text color to white */
         }
-        a:hover {
-            text-decoration: underline;
-            background-color: #0074E4;
+
+        .navbar a:hover {
+            background-color: #333;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .success-message {
+            font-size: 36px;
+            color: #4CAF50;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .checkmark {
+            font-size: 48px;
+            color: #4CAF50;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-choices {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .image-choice {
+            flex: 1;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .image-choice img {
+            max-width: 100%;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .image-choice img:hover {
+            transform: scale(1.1);
+        }
+
+        .image-choice img:active {
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <h1><span class="green-word">Kids</span><span class="white-word">With</span><span class="red-word">Bursaries</span></h1>
-    <p>"KidsWithBursaries" is a suitable name for a program or initiative aimed at providing financial support and bursaries to students. It conveys the idea that the program is dedicated to helping children and young individuals access educational opportunities by offering financial assistance in the form of bursaries.</p>
-    <a href="registration.html">Register</a>
+    <header>
+        <h1>Pedal<span style="color: #4CAF50;">Share</span></h1>
+    </header>
+
+    <div class="navbar" id="navbar">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <main>
+        <div class="checkmark">✔</div> <!-- Green checkmark -->
+        <div class="success-message">Registration Complete</div>
+        <div class="image-choices">
+            <div class="image-choice">
+                <img src="image1.jpg" alt="Image 1">
+            </div>
+            <div class="image-choice">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2023 PedalShare
+    </footer>
 </body>
 </html>
+
