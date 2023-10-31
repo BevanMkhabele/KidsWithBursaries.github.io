@@ -7,10 +7,12 @@
         body {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: limegreen;
         }
 
         header {
-            background-color: limegreen;
+            background-color: black;
             color: white;
             text-align: center;
             padding: 20px;
@@ -29,7 +31,6 @@
         }
 
         .navbar a {
-            float: left;
             display: block;
             color: white;
             text-align: center;
@@ -43,14 +44,18 @@
         }
 
         .main-content {
-            padding: 10vh 0; /* Adjust the padding to fill more of the screen */
+            padding: 10vh 0;
             text-align: center;
-            background-color: white;
         }
 
         .logo {
             text-align: center;
-            margin-top: 2vh; /* Adjusted to be 2% of the viewport height */
+            margin-top: 2vh;
+        }
+
+        .logo img {
+            max-width: 100%;
+            height: auto;
         }
 
         .description {
@@ -85,15 +90,20 @@
 
         /* Media Queries */
         @media (max-width: 768px) {
-            .navbar a {
-                float: none;
+            .navbar {
+                display: none;
+            }
+            .navbar.show {
                 display: block;
-                text-align: center;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1 class="three-d-text"><span style="color: white;">Pedal</span><span class="white-shadow" style="color: black;">Share.</span></h1>
+    </header>
+
     <div class="navbar">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -101,16 +111,14 @@
         <a href="#contact">Contact</a>
     </div>
 
-    <header>
-        <h1 class="three-d-text"><span style="color: white;">Pedal</span><span class="white-shadow" style="color: black;">Share.</span></h1>
-    </header>
+    <button class="toggle-button" id="toggleButton">Menu</button>
 
     <div class="main-content">
         <div class="logo">
             <img src="your-logo.png" alt="Your Logo">
         </div>
 
-        <p class="description">
+        <p class "description">
             Are you a bike owner looking to earn extra income by renting out your bike? Or maybe you're a bike enthusiast in search of the perfect ride? Look no further! Pedal Share is here to bring you together.
         </p>
 
@@ -122,5 +130,15 @@
     <footer>
         &copy; 2023 PedalShare
     </footer>
+
+    <script>
+        var toggleButton = document.getElementById("toggleButton");
+        var navbar = document.querySelector(".navbar");
+
+        toggleButton.addEventListener("click", function() {
+            navbar.classList.toggle("show");
+        });
+    </script>
 </body>
 </html>
+
