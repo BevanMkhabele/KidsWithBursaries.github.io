@@ -106,7 +106,7 @@
 
     <main>
         <div class="form-container">
-            <form action="upload.php" method="post" enctype="multipart/form-data">
+            <form action="user.html" method="post" enctype="multipart/form-data">
                 <div class="form-label">
                     <label for="idUpload">Upload your ID:</label>
                 </div>
@@ -116,7 +116,7 @@
 
                 <!-- Other file upload fields -->
 
-                <input type="submit" value="Upload" class="custom-file-upload" id="uploadButton">
+                <input type="submit" value="Upload" class="custom-file-upload">
             </form>
         </div>
     </main>
@@ -124,21 +124,5 @@
     <footer>
         &copy; 2023 PedalShare
     </footer>
-
-    <script>
-        const inputElements = document.querySelectorAll('.file-input');
-        inputElements.forEach((input) => {
-            input.addEventListener('change', (event) => {
-                const fileName = event.target.files[0] ? event.target.files[0].name : 'No file selected';
-                document.getElementById(`${input.id}FileName`).textContent = fileName;
-            });
-        });
-
-        // Add an event listener to the Upload button to open user.html
-        const uploadButton = document.getElementById('uploadButton');
-        uploadButton.addEventListener('click', () => {
-            window.location.href = 'user.html';
-        });
-    </script>
 </body>
 </html>
