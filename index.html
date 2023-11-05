@@ -38,6 +38,7 @@
             padding: 14px 20px;
             text-decoration: none;
             margin: 0 10px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .navbar a:hover {
@@ -73,12 +74,22 @@
             text-align: center;
         }
 
+        .register-button a {
+            text-decoration: none;
+            color: white;
+        }
+
         .register-button button {
-            background-color: black;
+            background-color: #000;
             color: white;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .register-button button:hover {
+            background-color: #333;
         }
 
         .three-d-text {
@@ -96,7 +107,14 @@
                 display: none;
             }
             .navbar.show {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                position: absolute;
+                background-color: #333;
+                width: 100%;
+                top: 60px;
+                transition: top 0.3s;
             }
         }
     </style>
@@ -106,14 +124,14 @@
         <h1 class="three-d-text"><span style="color: white;">Pedal</span><span class="white-shadow" style="color: black;">Share.</span></h1>
     </header>
 
+    <button class="toggle-button" id="toggleButton">Menu</button>
+
     <div class="navbar">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
     </div>
-
-    <button class="toggle-button" id="toggleButton">Menu</button>
 
     <div class="main-content">
         <div class="logo">
@@ -125,7 +143,7 @@
         </p>
 
         <div class="register-button">
-            <button><a href="registration.html" style="text-decoration: none; color: white;">Register</a></button>
+            <button><a href="registration.html">Register</a></button>
         </div>
     </div>
 
@@ -140,6 +158,15 @@
         toggleButton.addEventListener("click", function() {
             navbar.classList.toggle("show");
         });
+
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 60) {
+                navbar.style.top = "0";
+            } else {
+                navbar.style.top = "60px";
+            }
+        });
     </script>
 </body>
 </html>
+
