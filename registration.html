@@ -81,7 +81,7 @@
             padding: 20px;
         }
 
-        .registration-form input[type="text"] {
+        .registration-form input {
             width: 100%;
             padding: 10px;
             margin: 5px 0;
@@ -116,6 +116,10 @@
 
         .register-button button:hover {
             background-color: #333;
+        }
+
+        .error-message {
+            color: red;
         }
 
         .three-d-text {
@@ -185,7 +189,9 @@
                 <input type="text" id="surname" name="surname" required><br><br>
 
                 <label for="idNumber">ID Number or Passport Number:</label>
-                <input type="text" id="idNumber" name="idNumber" required><br><br>
+                <input type="number" id="idNumber" name="idNumber" required>
+                <span class="error-message" id="idNumberError"></span>
+                <br><br>
 
                 <label class="radio-label">Do you have an active delivery app?</label>
                 <input type="radio" id="yes" name="deliveryApp" value="Yes">
@@ -213,6 +219,19 @@
                 navbar.style.display = "block";
             }
         }
+
+        // Validate the "ID Number or Passport Number" input
+        document.getElementById("idNumber").addEventListener("input", function () {
+            var idNumberInput = this.value;
+            var idNumberPattern = /^\d+$/; // Only allow digits (numbers)
+            var idNumberError = document.getElementById("idNumberError");
+
+            if (!idNumberPattern.test(idNumberInput)) {
+                idNumberError.textContent = "Please enter only numbers.";
+            } else {
+                idNumberError.textContent = "";
+            }
+        });
     </script>
 </body>
 </html>
