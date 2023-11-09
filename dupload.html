@@ -106,7 +106,7 @@
 
     <main>
         <div class="form-container">
-            <form action="upload.php" method="post" enctype="multipart/form-data">
+            <form action="success.html" method="post" enctype="multipart/form-data">
                 <div class="form-label">
                     <label for="idUpload">Upload your ID:</label>
                 </div>
@@ -135,7 +135,7 @@
                 <label for="proofOfResidenceUpload" class="custom-file-upload">Select File</label>
                 <span class="selected-file" id="proofOfResidenceFileName"></span><br><br>
 
-                <input type="submit" value="Upload" class="custom-file-upload">
+                <input type="submit" value="Upload" class="custom-file-upload" onclick="redirectToSuccessPage()">
             </form>
         </div>
     </main>
@@ -152,6 +152,11 @@
                 document.getElementById(`${input.id}FileName`).textContent = fileName;
             });
         });
+
+        function redirectToSuccessPage() {
+            window.location.href = "success.html";
+        }
     </script>
 </body>
 </html>
+
